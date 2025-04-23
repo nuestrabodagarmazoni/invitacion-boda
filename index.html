@@ -126,30 +126,21 @@
     Tu navegador no soporta audio.
   </audio>
 
-  <script>
-    const boton = document.getElementById('empezar');
-    const musica = document.getElementById('musica');
-    const contenido = document.getElementById('contenido');
+<script>
+  const boton = document.getElementById('empezar');
+  const musica = document.getElementById('musica');
+  const contenido = document.getElementById('contenido');
 
-    boton.addEventListener('click', () => {
-      musica.volume = 0;
-      musica.play();
-      let vol = 0;
-      const fadeIn = setInterval(() => {
-        if (vol < 1) {
-          vol += 0.05;
-          musica.volume = vol;
-        } else {
-          clearInterval(fadeIn);
-        }
-      }, 200);
+  boton.addEventListener('click', () => {
+    musica.volume = 1;
+    musica.play();
 
-      // Mostrar el contenido y hacer scroll
-      document.querySelector('.bienvenida').style.display = 'none';
-      contenido.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+    // Mostrar el contenido y ocultar bienvenida
+    document.querySelector('.bienvenida').style.display = 'none';
+    contenido.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
 </body>
 </html>
