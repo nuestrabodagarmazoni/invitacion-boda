@@ -3,146 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitación de Boda</title>
+  <title>Nuestra Boda</title>
   <style>
-    :root {
-      --blanco: #ffffff;
-      --negro: #000000;
-      --dorado: #c5a253;
-      --verde-olivo: #708238;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap');
 
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: var(--blanco);
-      color: var(--negro);
-      scroll-behavior: smooth;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fffaf0;
+      color: #333;
     }
 
     .bienvenida {
       height: 100vh;
-      background-color: var(--blanco);
+      background: linear-gradient(to bottom, #ffffff, #f8f6f0);
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 2rem;
     }
 
     .bienvenida h1 {
-      font-size: 1.8rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #556b2f;
       margin-bottom: 1rem;
     }
 
-    .ilustracion {
-      width: 180px;
-      margin-bottom: 1rem;
+    .bienvenida img {
+      width: 150px;
+      margin: 1rem 0;
     }
 
-    .btn-empezar {
-      background-color: var(--dorado);
+    .boton {
+      background-color: #d4af37;
+      color: white;
       border: none;
-      color: var(--blanco);
-      padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
       cursor: pointer;
-      border-radius: 20px;
       transition: background-color 0.3s ease;
     }
 
-    .btn-empezar:hover {
-      background-color: #b19045;
+    .boton:hover {
+      background-color: #b7962b;
     }
 
     .contenido {
-      display: none;
-      padding: 2rem;
-    }
-
-    .seccion {
+      padding: 3rem 1rem;
       max-width: 800px;
-      margin: 0 auto 3rem auto;
+      margin: auto;
       text-align: center;
     }
 
-    .seccion h2 {
-      color: var(--verde-olivo);
-      font-size: 1.5rem;
+    .contenido h2 {
+      font-size: 2rem;
+      color: #222;
+      margin-bottom: 1rem;
     }
 
-    iframe {
+    .contenido p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    .formulario iframe {
       width: 100%;
       height: 600px;
       border: none;
-      margin-top: 1rem;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #555;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .bienvenida h1 {
+        font-size: 1.8rem;
+      }
+
+      .boton {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <section class="bienvenida" id="bienvenida">
-    <h1>"Cada familia tiene una historia, bienvenido a la nuestra..."</h1>
-    <img src="https://via.placeholder.com/180x120?text=👩‍❤️‍👨🐶🐶🐱" alt="Ilustración pareja y mascotas" class="ilustracion" />
-    <button class="btn-empezar" onclick="empezar()">Sí, acepto</button>
+  <section class="bienvenida">
+    <h1>Cada familia tiene una historia,<br>bienvenido a la nuestra...</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="pareja con mascotas" />
+    <button class="boton" id="empezar">Sí, acepto</button>
   </section>
 
-  <section class="contenido" id="contenido">
-    <div class="seccion">
-      <h2>¡Nos casamos!</h2>
-      <p>
-        Con mucha emoción, queremos invitarte a compartir un día muy especial con nosotros.<br>
-        Te esperamos el <strong>6 de octubre de 2025</strong> para celebrar el amor, la familia y la amistad.
-      </p>
-    </div>
+  <section class="contenido" id="contenido" style="display: none;">
+    <h2>¡Nos casamos!</h2>
+    <p>Y queremos compartir este día tan especial con vos. Te esperamos el <strong>6 de octubre de 2025</strong> para celebrar el amor, la vida y las historias compartidas. </p>
 
-    <div class="seccion">
-      <h2>Confirmá tu asistencia</h2>
-      <p>
-        Por favor, completá el siguiente formulario para saber si contaremos con tu presencia 🌿
-      </p>
-      <!-- Reemplazá este iframe con tu Google Form -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYFORMURL/viewform?embedded=true" loading="lazy">Cargando…</iframe>
-    </div>
+    <h2>Confirmá tu asistencia</h2>
+    <p>Por favor completá el formulario a continuación para que podamos contar con vos:</p>
 
-    <footer>
-      Hecho con amor 💛 por [Tu Nombre] · ¡Gracias por acompañarnos!
-    </footer>
+    <div class="formulario">
+      <!-- 🔽 Reemplazá el link de abajo por tu Google Form real -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUULinkFicticio/viewform?embedded=true">Cargando…</iframe>
+    </div>
   </section>
 
-  <!-- Música -->
+  <footer>
+    Con amor, [Nombre de los novios] ✨
+  </footer>
+
   <audio id="musica" loop>
-    <source src="die-to-smile.mp3" type="audio/mpeg" />
+    <source src="music.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
 
   <script>
-    function empezar() {
-      document.getElementById('bienvenida').style.display = 'none';
-      document.getElementById('contenido').style.display = 'block';
+    const boton = document.getElementById('empezar');
+    const musica = document.getElementById('musica');
+    const contenido = document.getElementById('contenido');
 
-      const musica = document.getElementById('musica');
+    boton.addEventListener('click', () => {
       musica.volume = 0;
       musica.play();
-
       let vol = 0;
-      const subirVolumen = setInterval(() => {
-        if (vol < 0.5) {
-          vol += 0.01;
+      const fadeIn = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.05;
           musica.volume = vol;
         } else {
-          clearInterval(subirVolumen);
+          clearInterval(fadeIn);
         }
       }, 200);
-    }
+
+      // Mostrar el contenido y hacer scroll
+      document.querySelector('.bienvenida').style.display = 'none';
+      contenido.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 
 </body>
