@@ -142,5 +142,17 @@
   });
 </script>
 
+  <script>
+  document.addEventListener("visibilitychange", function() {
+    const musica = document.getElementById('musica');
+
+    if (document.hidden) {
+      musica.pause();
+    } else {
+      musica.play();
+    }
+  });
+</script>
+
 </body>
 </html>
