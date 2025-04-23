@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación de Boda</title>
+  <style>
+    :root {
+      --blanco: #ffffff;
+      --negro: #000000;
+      --dorado: #c5a253;
+      --verde-olivo: #708238;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: var(--blanco);
+      color: var(--negro);
+      scroll-behavior: smooth;
+    }
+
+    .bienvenida {
+      height: 100vh;
+      background-color: var(--blanco);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .bienvenida h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .ilustracion {
+      width: 180px;
+      margin-bottom: 1rem;
+    }
+
+    .btn-empezar {
+      background-color: var(--dorado);
+      border: none;
+      color: var(--blanco);
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-empezar:hover {
+      background-color: #b19045;
+    }
+
+    .contenido {
+      display: none;
+      padding: 2rem;
+    }
+
+    .seccion {
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
+    }
+
+    .seccion h2 {
+      color: var(--verde-olivo);
+      font-size: 1.5rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="bienvenida" id="bienvenida">
+    <h1>"Cada familia tiene una historia, bienvenido a la nuestra..."</h1>
+    <img src="https://via.placeholder.com/180x120?text=👩‍❤️‍👨🐶🐶🐱" alt="Ilustración pareja y mascotas" class="ilustracion" />
+    <button class="btn-empezar" onclick="empezar()">Sí, acepto</button>
+  </section>
+
+  <section class="contenido" id="contenido">
+    <div class="seccion">
+      <h2>¡Nos casamos!</h2>
+      <p>
+        Con mucha emoción, queremos invitarte a compartir un día muy especial con nosotros.<br>
+        Te esperamos el <strong>6 de octubre de 2025</strong> para celebrar el amor, la familia y la amistad.
+      </p>
+    </div>
+
+    <div class="seccion">
+      <h2>Confirmá tu asistencia</h2>
+      <p>
+        Por favor, completá el siguiente formulario para saber si contaremos con tu presencia 🌿
+      </p>
+      <!-- Reemplazá este iframe con tu Google Form -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYFORMURL/viewform?embedded=true" loading="lazy">Cargando…</iframe>
+    </div>
+
+    <footer>
+      Hecho con amor 💛 por [Tu Nombre] · ¡Gracias por acompañarnos!
+    </footer>
+  </section>
+
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="die-to-smile.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    function empezar() {
+      document.getElementById('bienvenida').style.display = 'none';
+      document.getElementById('contenido').style.display = 'block';
+
+      const musica = document.getElementById('musica');
+      musica.volume = 0;
+      musica.play();
+
+      let vol = 0;
+      const subirVolumen = setInterval(() => {
+        if (vol < 0.5) {
+          vol += 0.01;
+          musica.volume = vol;
+        } else {
+          clearInterval(subirVolumen);
+        }
+      }, 200);
+    }
+  </script>
+
+</body>
+</html>
