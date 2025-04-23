@@ -3,156 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nuestra Boda</title>
+  <title>Invitación de Boda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap');
-
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #fffaf0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #f0efe9, #e4d9c3);
       color: #333;
+      overflow-x: hidden;
     }
-
+    header, section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #1f1f1f;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #4a4a4a;
+    }
+    h3 {
+      font-size: 1.5rem;
+      color: #6b6b6b;
+    }
     .bienvenida {
+      position: relative;
       height: 100vh;
-      background: linear-gradient(to bottom, #ffffff, #f8f6f0);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 2rem;
+      background: url('https://i.imgur.com/vNb7Ums.png') no-repeat center center;
+      background-size: cover;
     }
-
     .bienvenida h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      color: #556b2f;
-      margin-bottom: 1rem;
+      color: #2e2e2e;
+      max-width: 90%;
+      background-color: rgba(255,255,255,0.7);
+      padding: 1rem;
+      border-radius: 1rem;
     }
-
-    .bienvenida img {
-      width: 150px;
-      margin: 1rem 0;
-    }
-
-    .boton {
-      background-color: #d4af37;
+    #empezar {
+      background: #bfa77a;
       color: white;
+      font-weight: bold;
       border: none;
       padding: 1rem 2rem;
+      border-radius: 50px;
+      margin-top: 2rem;
       font-size: 1.2rem;
-      border-radius: 30px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
-
-    .boton:hover {
-      background-color: #b7962b;
+    #empezar:hover {
+      background: #a99163;
     }
-
-    .contenido {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
+    #contenido {
+      display: none;
     }
-
-    .contenido h2 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 1rem;
+    .floral {
+      position: absolute;
+      width: 100px;
+      height: auto;
+      z-index: 0;
     }
-
-    .contenido p {
-      font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 2rem;
+    .top-left { top: 0; left: 0; }
+    .top-right { top: 0; right: 0; transform: scaleX(-1); }
+    .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
+    .bottom-right { bottom: 0; right: 0; transform: scale(-1, -1); }
+    .floral-container img {
+      position: absolute;
     }
-
-    .formulario iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
+    .formulario-link {
+      margin-top: 2rem;
     }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #999;
+    .formulario-link a {
+      background-color: #445d48;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
     }
-
-    @media (max-width: 600px) {
-      .bienvenida h1 {
-        font-size: 1.8rem;
-      }
-
-      .boton {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
-      }
+    .formulario-link a:hover {
+      background-color: #5d7c65;
     }
   </style>
 </head>
 <body>
-
-  <section class="bienvenida">
-    <h1>Cada familia tiene una historia,<br>bienvenido a la nuestra...</h1>
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="pareja con mascotas" />
-    <button class="boton" id="empezar">Sí, acepto</button>
-  </section>
-
-  <section class="contenido" id="contenido" style="display: none;">
-    <h2>¡Nos casamos!</h2>
-    <p>Y queremos compartir este día tan especial con vos. Te esperamos el <strong>6 de octubre de 2025</strong> para celebrar el amor, la vida y las historias compartidas. </p>
-
-    <h2>Confirmá tu asistencia</h2>
-    <p>Por favor completá el formulario a continuación para que podamos contar con vos:</p>
-
-    <div class="formulario">
-      <!-- 🔽 Reemplazá el link de abajo por tu Google Form real -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUULinkFicticio/viewform?embedded=true">Cargando…</iframe>
+  <div class="bienvenida">
+    <h1>“Cada familia tiene una historia, bienvenido a la nuestra...”</h1>
+    <button id="empezar">Sí, acepto</button>
+    <div class="floral-container">
+      <img src="https://i.imgur.com/E1fT52V.png" class="floral top-left">
+      <img src="https://i.imgur.com/E1fT52V.png" class="floral top-right">
+      <img src="https://i.imgur.com/E1fT52V.png" class="floral bottom-left">
+      <img src="https://i.imgur.com/E1fT52V.png" class="floral bottom-right">
     </div>
-  </section>
+  </div>
 
-  <footer>
-    Con amor, [Nombre de los novios] ✨
-  </footer>
+  <div id="contenido">
+    <section>
+      <h2>Cuándo</h2>
+      <p>El 6 de Octubre de 2025</p>
+    </section>
 
-  <audio id="musica" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-  </audio>
+    <section>
+      <h2>Dónde</h2>
+      <p>Dirección del evento (a completar)</p>
+    </section>
 
-<script>
-  const boton = document.getElementById('empezar');
-  const musica = document.getElementById('musica');
-  const contenido = document.getElementById('contenido');
+    <section>
+      <h2>Código de vestimenta</h2>
+      <p>Formal, con toques románticos</p>
+    </section>
 
-  boton.addEventListener('click', () => {
-    musica.volume = 1;
-    musica.play();
+    <section>
+      <h2>Confirmar asistencia</h2>
+      <div class="formulario-link">
+        <a href="#" target="_blank">Confirmar asistencia</a>
+      </div>
+    </section>
+  </div>
 
-    // Mostrar el contenido y ocultar bienvenida
-    document.querySelector('.bienvenida').style.display = 'none';
-    contenido.style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  <audio id="musica" src="music.mp3" loop></audio>
 
   <script>
-  document.addEventListener("visibilitychange", function() {
+    const boton = document.getElementById('empezar');
     const musica = document.getElementById('musica');
+    const contenido = document.getElementById('contenido');
 
-    if (document.hidden) {
-      musica.pause();
-    } else {
+    boton.addEventListener('click', () => {
+      musica.volume = 1;
       musica.play();
-    }
-  });
-</script>
+      document.querySelector('.bienvenida').style.display = 'none';
+      contenido.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) {
+        musica.pause();
+      } else {
+        musica.play();
+      }
+    });
+  </script>
 </body>
 </html>
