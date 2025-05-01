@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación de Boda</title>
 
-  <!-- Fuente manuscrita -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
+    /* Variables de color */
     :root {
       --blanco: #ffffff;
       --negro: #000000;
@@ -19,86 +20,78 @@
 
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
+      font-family: 'Roboto', sans-serif;
       background-color: var(--blanco);
       color: var(--negro);
-      scroll-behavior: smooth;
     }
 
+    /* Estilo de la pantalla principal */
     .bienvenida {
-      height: 100vh;
-      background-image: url("https://github.com/nuestrabodagarmazoni/invitacion/raw/refs/heads/main/eucalyptus.jpg?raw=true"); /* Cambia esta URL por la imagen que desees */
+      background-image: url("https://github.com/nuestrabodagarmazoni/invitacion/raw/refs/heads/main/eucalyptus.jpg?raw=true");
       background-size: cover;
       background-position: center;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 2rem;
       position: relative;
+      color: var(--blanco);
     }
 
     .bienvenida h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
+      font-size: 3rem;
       margin-bottom: 1.5rem;
-      color: var(--negro);
+      line-height: 1.5;
     }
 
-    .ilustracion {
-      width: 180px;
-      margin-bottom: 1rem;
-    }
-
-    .btn-empezar {
+    .bienvenida button {
       background-color: var(--verde-olivo-claro);
       border: none;
       color: var(--negro);
       padding: 1rem 2rem;
       font-size: 1.2rem;
-      font-family: 'Arial Black', Arial, sans-serif;
       cursor: pointer;
       border-radius: 30px;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .btn-empezar:hover {
+    .bienvenida button:hover {
       background-color: #8e9f61;
       transform: scale(1.05);
     }
 
     .contenido {
       display: none;
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
 
     .seccion {
-      max-width: 800px;
-      margin: 0 auto 3rem auto;
       text-align: center;
+      margin: 2rem 0;
     }
 
     .seccion h2 {
       color: var(--verde-olivo);
-      font-size: 1.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      margin-top: 1rem;
+    .seccion p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
-      color: #555;
+      background-color: var(--dorado);
+      color: var(--blanco);
     }
 
-    /* Destello animado */
+    /* Efectos de transición */
     .destello {
       position: fixed;
       top: 0;
@@ -128,12 +121,13 @@
 
 <body>
 
+  <!-- Pantalla de bienvenida -->
   <section class="bienvenida" id="bienvenida">
     <h1>Cada familia <br> tiene una historia... <br> Deseamos que tú <br> seas testigo de la nuestra...</h1>
-    <img src="https://via.placeholder.com/180x120?text=👩‍❤️‍👨🐶🐶🐱" alt="Ilustración pareja y mascotas" class="ilustracion" />
     <button class="btn-empezar" onclick="empezar()">Sí, acepto</button>
   </section>
 
+  <!-- Contenido de la invitación -->
   <section class="contenido" id="contenido">
     <div class="seccion">
       <h2>Te invitamos cordialmente</h2>
@@ -164,14 +158,6 @@
       </p>
     </div>
 
-    <div class="seccion">
-      <h2>Confirmación</h2>
-      <p>
-        Por favor, confirma tu asistencia a través del formulario que se encuentra a continuación.
-      </p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYFORMURL/viewform?embedded=true" loading="lazy">Cargando…</iframe>
-    </div>
-
     <footer>
       Hecho con amor 💛 por [Tu Nombre] · ¡Gracias por acompañarnos!
     </footer>
@@ -180,7 +166,7 @@
   <!-- Música -->
   <audio id="musica" loop preload="auto">
     <!-- Cambia la URL aquí por el enlace de tu música -->
-    <source src="https://github.com/nuestrabodagarmazoni/invitacion-boda/blob/main/music.mp3" type="audio/mpeg" />
+    <source src="AQUÍ_PON_TU_ENLACE_DE_MÚSICA.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio.
   </audio>
 
