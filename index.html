@@ -4,156 +4,229 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invitación de Boda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Fuente manuscrita -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --blanco: #ffffff;
+      --negro: #000000;
+      --dorado: #c5a253;
+      --verde-olivo: #708238;
+      --verde-olivo-claro: #a5b67a;
+    }
+
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #ffffff, #f0efe9, #e4d9c3);
-      color: #333;
-      overflow-x: hidden;
+      font-family: 'Georgia', serif;
+      background-color: var(--blanco);
+      color: var(--negro);
+      scroll-behavior: smooth;
     }
-    header, section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    h1, h2, h3 {
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      color: #1f1f1f;
-    }
-    h2 {
-      font-size: 2rem;
-      color: #4a4a4a;
-    }
-    h3 {
-      font-size: 1.5rem;
-      color: #6b6b6b;
-    }
+
     .bienvenida {
-      position: relative;
       height: 100vh;
+      background-image: url("https://github.com/nuestrabodagarmazoni/invitacion/raw/refs/heads/main/eucalyptus.jpg?raw=true"); /* Cambia esta URL por la imagen que desees */
+      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background: url('https://i.imgur.com/vNb7Ums.png') no-repeat center center;
-      background-size: cover;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
     }
+
     .bienvenida h1 {
-      color: #2e2e2e;
-      max-width: 90%;
-      background-color: rgba(255,255,255,0.7);
-      padding: 1rem;
-      border-radius: 1rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--negro);
     }
-    #empezar {
-      background: #bfa77a;
-      color: white;
-      font-weight: bold;
+
+    .ilustracion {
+      width: 180px;
+      margin-bottom: 1rem;
+    }
+
+    .btn-empezar {
+      background-color: var(--verde-olivo-claro);
       border: none;
+      color: var(--negro);
       padding: 1rem 2rem;
-      border-radius: 50px;
-      margin-top: 2rem;
       font-size: 1.2rem;
+      font-family: 'Arial Black', Arial, sans-serif;
       cursor: pointer;
-      transition: background 0.3s;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    #empezar:hover {
-      background: #a99163;
+
+    .btn-empezar:hover {
+      background-color: #8e9f61;
+      transform: scale(1.05);
     }
-    #contenido {
+
+    .contenido {
       display: none;
+      padding: 2rem;
     }
-    .floral {
-      position: absolute;
-      width: 100px;
-      height: auto;
-      z-index: 0;
+
+    .seccion {
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
     }
-    .top-left { top: 0; left: 0; }
-    .top-right { top: 0; right: 0; transform: scaleX(-1); }
-    .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
-    .bottom-right { bottom: 0; right: 0; transform: scale(-1, -1); }
-    .floral-container img {
-      position: absolute;
+
+    .seccion h2 {
+      color: var(--verde-olivo);
+      font-size: 1.5rem;
     }
-    .formulario-link {
-      margin-top: 2rem;
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 1rem;
     }
-    .formulario-link a {
-      background-color: #445d48;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
     }
-    .formulario-link a:hover {
-      background-color: #5d7c65;
+
+    /* Destello animado */
+    .destello {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      animation: flash 1s ease-out forwards;
+    }
+
+    @keyframes flash {
+      0% {
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="bienvenida">
-    <h1>“Cada familia tiene una historia, bienvenido a la nuestra...”</h1>
-    <button id="empezar">Sí, acepto</button>
-    <div class="floral-container">
-      <img src="https://i.imgur.com/E1fT52V.png" class="floral top-left">
-      <img src="https://i.imgur.com/E1fT52V.png" class="floral top-right">
-      <img src="https://i.imgur.com/E1fT52V.png" class="floral bottom-left">
-      <img src="https://i.imgur.com/E1fT52V.png" class="floral bottom-right">
+
+  <section class="bienvenida" id="bienvenida">
+    <h1>Cada familia <br> tiene una historia... <br> Deseamos que tú <br> seas testigo de la nuestra...</h1>
+    <img src="https://via.placeholder.com/180x120?text=👩‍❤️‍👨🐶🐶🐱" alt="Ilustración pareja y mascotas" class="ilustracion" />
+    <button class="btn-empezar" onclick="empezar()">Sí, acepto</button>
+  </section>
+
+  <section class="contenido" id="contenido">
+    <div class="seccion">
+      <h2>Te invitamos cordialmente</h2>
+      <p>
+        Con mucha emoción, queremos invitarte a compartir un día muy especial con nosotros.<br>
+        Te esperamos el <strong>6 de octubre de 2025</strong> para celebrar el amor, la familia y la amistad.
+      </p>
     </div>
-  </div>
 
-  <div id="contenido">
-    <section>
+    <div class="seccion">
       <h2>Cuándo</h2>
-      <p>El 6 de Octubre de 2025</p>
-    </section>
+      <p>
+        El día de nuestra boda será el <strong>6 de octubre de 2025</strong>, y nos encantaría contar con tu presencia.
+      </p>
+    </div>
 
-    <section>
+    <div class="seccion">
       <h2>Dónde</h2>
-      <p>Dirección del evento (a completar)</p>
-    </section>
+      <p>
+        La ceremonia se llevará a cabo en <strong>La Hacienda del Sol</strong>, a las <strong>5:00 PM</strong>.
+      </p>
+    </div>
 
-    <section>
+    <div class="seccion">
       <h2>Código de vestimenta</h2>
-      <p>Formal, con toques románticos</p>
-    </section>
+      <p>
+        Te pedimos que vengas con vestimenta formal para acompañarnos en este día tan especial.
+      </p>
+    </div>
 
-    <section>
-      <h2>Confirmar asistencia</h2>
-      <div class="formulario-link">
-        <a href="#" target="_blank">Confirmar asistencia</a>
-      </div>
-    </section>
-  </div>
+    <div class="seccion">
+      <h2>Confirmación</h2>
+      <p>
+        Por favor, confirma tu asistencia a través del formulario que se encuentra a continuación.
+      </p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYFORMURL/viewform?embedded=true" loading="lazy">Cargando…</iframe>
+    </div>
 
-  <audio id="musica" src="music.mp3" loop></audio>
+    <footer>
+      Hecho con amor 💛 por [Tu Nombre] · ¡Gracias por acompañarnos!
+    </footer>
+  </section>
+
+  <!-- Música -->
+  <audio id="musica" loop preload="auto">
+    <!-- Cambia la URL aquí por el enlace de tu música -->
+    <source src="https://github.com/nuestrabodagarmazoni/invitacion-boda/blob/main/music.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
 
   <script>
-    const boton = document.getElementById('empezar');
     const musica = document.getElementById('musica');
-    const contenido = document.getElementById('contenido');
+    let wasPlaying = false;
 
-    boton.addEventListener('click', () => {
-      musica.volume = 1;
+    // Botón de inicio
+    function empezar() {
+      document.getElementById('bienvenida').style.display = 'none';
+      document.getElementById('contenido').style.display = 'block';
+
+      // Mostrar destello blanco
+      const destello = document.createElement('div');
+      destello.classList.add('destello');
+      document.body.appendChild(destello);
+
+      // Reproducir música suavemente
+      musica.volume = 0;
       musica.play();
-      document.querySelector('.bienvenida').style.display = 'none';
-      contenido.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < 0.5) {
+          vol += 0.01;
+          musica.volume = vol;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 200);
+    }
 
-    document.addEventListener("visibilitychange", function() {
+    // Pausar música al salir de pestaña y reanudar en el mismo punto
+    document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
-        musica.pause();
+        if (!musica.paused) {
+          musica.pause();
+          wasPlaying = true;
+        }
       } else {
-        musica.play();
+        if (wasPlaying) {
+          musica.play();
+          wasPlaying = false;
+        }
       }
     });
   </script>
+
 </body>
 </html>
